@@ -1,0 +1,31 @@
+<p>
+	<strong>Title:</strong>
+	<%= @article.title %>
+</p>
+
+<p>
+	<strong>Content:</strong>
+	<%= @article.content%>
+</p>
+
+<h2>Comments</h2>
+<% @article.comments.each do |comment| %>
+  <P>
+  	<strong>Commenter:</strong>
+  	<%= comment.commenter %>
+  </P>
+
+  <p>
+  	<strong>Comment:</strong>
+  	<%= comment.body %>
+  </p>
+<% end %>
+
+<h3>Tags</h3>
+<% @article.tags.each do |tag|%>
+  <p>
+    <strong>Name:</strong>
+    <%= tag.name %>
+  </p>
+<% end %>
+<%= link_to 'Back', admin_articles_path %>

@@ -1,0 +1,19 @@
+<h1>Listing categories</h1>
+<%= link_to 'New article', new_admin_category_path %>
+
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th colspan="1"></th>
+	</tr>
+	<% @categories.each do |category| %>
+	  <tr>
+	  	<td><%= category.name %></td>
+			<td><%= link_to 'Destroy', admin_category_path(category),
+			  	  method: :delete, data: {confire: 'Are you sure?'}  %>
+  	  </td>
+	  </tr>
+
+	<% end %>
+</table>
